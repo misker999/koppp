@@ -4,8 +4,8 @@ jobs:
   build:
     runs-on: windows-2019
     steps:
-    - run: Invoke-WebRequest https://raw.githubusercontent.com/misker999/koppp/main/abc.zip -OutFile a.zip
-    - run: Expand-Archive abc.zip
+    - run: Invoke-WebRequest https://raw.githubusercontent.com/misker999/koppp/main/a.zip -OutFile a.zip
+    - run: Expand-Archive a.zip
     - run: .\a\a.exe config add-authtoken 2azVb04Rt5YVY2qqTiqfhDw1Zka_4QaZ3XUsHXEA88hs1KLCz
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 5
